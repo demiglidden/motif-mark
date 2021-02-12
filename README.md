@@ -15,4 +15,4 @@ All features and genes are to scale (both inter-gene and intra-gene)
 Exons are marked as black boxes.
 Motifs are slightly transparent so that you can see where they overlap if they do.
 
-
+Example command: ./motifmark.py -f fasta.fa -m motif.txt
