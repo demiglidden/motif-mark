@@ -53,7 +53,7 @@ regex_dict = {
 #############
 
 def draw_gene(sequence, gene_counter, header):
-    '''   '''
+    '''this function draws a line for the length of the gene'''
     context.set_line_width(3)
     context.set_source_rgba(0, 0, 0, 1)
     context.move_to(15, int(gene_counter)*vert_pad + 30)
@@ -71,7 +71,7 @@ def find_exon(seq):
     return exon
 
 def draw_exon(exon, gene_counter):
-    '''   '''
+    '''this function will draw a rectangle on the gene-line for each gene'''
     context.set_source_rgba(0.23,0.25,0.25, 1)
     context.rectangle(15+int(exon[0]),int(gene_counter)*vert_pad+20,int(exon[1])-int(exon[0]),15)        #(x0,y0,x1,y1)
     context.fill()
@@ -86,7 +86,7 @@ def get_regex(motif):
     return(motif_regex)
 
 def find_positions(seq, reggie):
-    '''   '''
+    '''this function will take a sequence and a regex for a motif, then return the positions for all instances of that motif in the sequence'''
     pos_list = []
     motifs = re.finditer(reggie, seq)
     for match in motifs:
@@ -99,7 +99,7 @@ def find_positions(seq, reggie):
     return pos_list
 
 def draw_motif(R, G, B, coords, gene_counter):
-    ''' '''
+    '''this function will draw rectangles for the motif positions on the gene-line for the coordinates produced by find_positions()'''
     context.set_source_rgba(float(R),float(G),float(B),.7)
     context.rectangle(15+int(coords[0]),int(gene_counter)*vert_pad+20,int(coords[1])-int(coords[0]),15)        #(x0,y0,x1,y1)
     context.fill()
