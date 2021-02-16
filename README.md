@@ -5,7 +5,7 @@ This script visualizes nucleotide motifs on genes with a single exon. It current
 
 Please ensure that the genes are in fasta format with exons in uppercase and introns in lowercase. The motifs should be passed as a text file with each motif on its own line.
 
-This script is Python3 Please install the following packages before executing script:
+This is a Python3 script. Please install the following packages before executing script:
     pycairo
     argparse
     re
@@ -15,4 +15,4 @@ All features and genes are to scale (both inter-gene and intra-gene)
 Exons are marked as black boxes.
 Motifs are slightly transparent so that you can see where they overlap if they do.
 
-
+Example command: ./motifmark.py -f fasta.fa -m motif.txt
